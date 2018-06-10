@@ -1,0 +1,15 @@
+{
+  "name": "voiptutorialwithsipjs",
+  "version": "1.0.0",
+  "description": "VTVcab Engineering - VoIP Tutorial with Sip.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "micro"
+  },
+  "author": "Innovation and Technology Team",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "micro": "latest"
+  }
+}

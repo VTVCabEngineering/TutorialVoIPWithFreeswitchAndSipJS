@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>VTVcab Engineering - VoIP demo with SIP.js</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+
+  <body>
+    <h1><a href="http://www.sipjs.com" target="_blank"><img src="/img/logo.png" alt="sip.js"/></a></h1>
+
+    <!-- Configuration Prompt -->
+    <form id="config-form" action="">
+      <label>Họ tên    <input type="text" name="displayName" placeholder="Nguyễn Văn Linh"/></label>
+      <label>Địa chỉ SIP      <input type="text" name="uri" placeholder="1009@192.168.100.5:5060"/></label>
+      <label>Tài khoản <input type="text" name="authorizationUser" placeholder="1009"/></label>
+      <label>Mật khẩu      <input type="password" name="password" /></label>
+      <label>Địa chỉ WS Server     <input type="text" name="wsServers" placeholder="ws://192.168.100.5:5066"/></label>
+      <input type="submit" name="configSubmit" value="Tạo UA (User Agent)" />
+    </form>
+
+    <!-- UA Control Form -->
+    <div id="ua">
+      <div id="ua-status">Đã ngắt kết nối</div>
+      <button id="ua-register">Đăng ký</button>
+      <form id="new-session-form" action="">
+        <label>Bật chế độ video <input type="checkbox" id="ua-video" checked/></label>
+        <label>Địa chỉ SIP      <input type="text" id="ua-uri" placeholder="1003@192.168.100.5:5060"/></label>
+        <input type="submit" id="ua-invite-submit" value="Gọi thoại" />
+        <input type="submit" id="ua-message-submit" value="Bắt đầu chat" />
+      </form>
+    </div>
+
+    <ul id="session-list"></ul>
+
+
+    <!-- Templates to clone Sessions and Messages -->
+    <ul id="templates">
+      <li id="session-template" class="template session">
+        <h2><strong class="display-name"></strong> <span class="uri"></span></h2>
+        <button class="green">Xanh</button>
+        <button class="red">Đỏ</button>
+        <form class="dtmf" action="">
+          <label>DTMF <input type="text" maxlength="1" /></label>
+          <input type="submit" value="Gửi" />
+        </form>
+        <video autoplay>Video bị tắt hoặc không sẵn có</video>
+        <ul class="messages"></ul>
+        <form class="message-form" action="">
+          <input type="text" placeholder="Nhập thông tin muốn gửi"/><input type="submit" value="Gửi" />
+        </form>
+      </li>
+    </ul>
+
+    <script src="/js/sip-0.5.0.js"></script>
+    <script src="/js/ua.js"></script>
+
+  </body>
+</html>
